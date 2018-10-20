@@ -2,25 +2,107 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>GIFted</title>
+        <title>Pokemon VS Marvel</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="assets/style.css">
-
-
     </head>
     <body>
+
         <!-- Jumbo Header -->
-        <div class="jumbotron">
-            <h1>Who Will Win?!</h1>
-            <h2>Pokemon VS Marvel</h2>
+        <div class="jumbotron container-fluid">
+            <div class="row">
+                <div class="col-md-5">
+                    <div id=pokeLogo><img src="assets/images/PokeAPI.png"></div> 
+                </div>
+                <div class="col-md-2 offset-md- vs">
+                    <div id="vsImg"><img src="assets/images/vs.png"></div>
+                </div>
+                <div class="col-md-5">
+                <div id=marvelLogo class="card"><h6>MARVELapi</h6></div>
+                </div>
+            </div>
         </div>
 
+        <!-- Current Match Container -->
+        <div class="container-fluid jumbotron">
+                <div class="row">
+                        <div class="col-md-12">
+                        <h1>Who Will Win?!</h1>
+                        </div>
+                    </div>
+        <div class="row">
+            <!-- Pokemon Card -->
+            <div class="col-md-5">
+                <div class="card bg-dark text-white">
+                <img class="card-img" src="?" alt="Pokemon Image">
+                </div>
+            </div><!--pokemon end-->
+            <!-- VS -->
+            <div class="col-md-2">
+            <h3>VS</h3>
+            </div><!--vs end-->
+            <!-- Marvel Card -->
+            <div class="col-md-5">
+                <div class="card bg-dark text-white">
+                <img class="card-img" src="?" alt="Marvel Image">
+                </div>
+            </div><!--marvel end-->
+        </div><!--row end-->
+        </div> <!--current match jumbo end-->
+
+        <!-- Rankings Table -->
+        <div class="jumbotron">
+        <h2 id="tableTitle">Rankings</h2>
+        <table id="rankingTable">
+            <tr id="colHeaders">
+                <th>Pokemon</th>
+                <th>Score</th> 
+                <th></th>
+                <th>Marvel</th>
+                <th>Score</th>
+            </tr>
+            <!-- Example Row, Delete after Complete -->
+            <tr>
+                <td>Bulbasaur</td>
+                <td>1</td>
+                <td>VS</td>
+                <td>Thor</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Pikachu</td>
+                <td>3</td>
+                <td>VS</td>
+                <td>Spiderman</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Pikachu</td>
+                <td>3</td>
+                <td>VS</td>
+                <td>Thor</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Jiggly Puff</td>
+                <td>3</td>
+                <td>VS</td>
+                <td>Iron Man</td>
+                <td>1</td>
+            </tr>
+        </table>
+        </div><!-- rankings table jumbo end-->
+
+        <!-- Credits -->
+        <a href="http://www.onlinewebfonts.com">oNline Web Fonts</a>
         <!-- Scripts -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
         <script type="text/javascript" src="assets/javascript.js"></script>
     </body>
 </html>

@@ -1,4 +1,4 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+
 
 
     var public_api = "0fe98b910165d9ca2dc0abf1bc48fca1";
