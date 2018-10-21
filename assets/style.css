@@ -1,0 +1,61 @@
+.vs {
+    display: flex;
+}
+
+table {
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+h1 {
+    padding: 0px;
+}
+
+h6 {
+    margin: auto;
+    text-align: center; 
+    font-size: 825%;
+    letter-spacing: -8px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    padding: 0px;
+}
+
+h2 {
+    margin: auto;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: center;
+}
+
+#marvelLogo {
+    background-color: rgb(236,29,35);
+    color: rgb(254,254,254);
+    min-height: 100%;
+    display: flex;
+    min-width: 100%;
+    padding: 0px;
+    margin-left: 10px;
+}
+
+#pokeLogo {
+    display: flex;
+}
+
+#vsImg {
+    height: 200px;
+    display: flex;
+    padding-top: 10%;
+}
+
+.jumbotron {
+    padding-top: 20px;
+    padding-bottom: 25px;
+
+}
