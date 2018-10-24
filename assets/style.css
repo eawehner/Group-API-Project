@@ -1,0 +1,58 @@
+/* Jumbo Header */
+.jumbotron {
+    padding-top: 20px;
+    padding-bottom: 25px;
+}
+#marvelLogo {
+    background-color: rgb(236,29,35);
+    color: rgb(254,254,254);
+    display: flex;
+    min-width: 100%;
+    padding: 0px;
+    margin-left: 10px;
+    font-size: 1.25vw;
+    height: 75%;
+}
+#pokeLogo {
+    display: flex;
+    max-height: 75%;
+}
+#vsImg {
+    height: 200px;
+    display: flex;
+    padding-top: 10%;
+    max-height: 75%;
+}
+.vs {
+    display: flex;
+}
+
+/* Fonts */
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+}
+h1 {
+    padding: 0px;
+}
+h2 {
+    margin: auto;
+}
+h6 {
+    margin: auto;
+    text-align: center; 
+    font-size: 825%;
+    letter-spacing: -8px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    padding: 0px;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: center;
+}
+
+table {
+    width: 100%;
+}
