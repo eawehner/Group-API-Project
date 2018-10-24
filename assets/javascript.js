@@ -3,22 +3,27 @@
         return Math.floor(Math.random() * (max - min + 1)) + min;
     };
 
-    var id = getRandomInt(1009144, 1011144);
+    // var id = getRandomInt(1009150, 1011100);
+    // /${id} in url
+
+    var offset = getRandomInt(1, 1471);
     
     var public_api = "0fe98b910165d9ca2dc0abf1bc48fca1";
     var private_api = "71f9d9779591c0d481b10e7d48b547b5c50e7935";
     var ts = Math.floor(Math.random() * Math.floor(1000));
     var hash = CryptoJS.MD5(`${ts}${private_api}${public_api}`);
-    var queryURL = `http://gateway.marvel.com/v1/public/characters/${id}?limit=1&apikey=${public_api}&hash=${hash}&ts=${ts}`
+    var queryURL = `http://gateway.marvel.com/v1/public/characters?limit=20&offset=${offset}&apikey=${public_api}&hash=${hash}&ts=${ts}`
 
     $.ajax({
         url: queryURL,
         method: "GET"
     })
     .then(function(response) {
+        var i = getRandomInt(1, 20);
+
         console.log(queryURL);
 
-        console.log(response.data.results);
+        console.log(response.data.results[i]);
     }) 
 
     //TRYING TO PULL FROM POKE API
