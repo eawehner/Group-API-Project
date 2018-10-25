@@ -29,7 +29,10 @@
       var marvelPic = response.data.results[i].thumbnail.path + "." + response.data.results[i].thumbnail.extension;
       $("#marvelImg").attr("src", marvelPic);
 
-      $("#marvelName").text(response.data.results[i].name);
+      var marvelName = response.data.results[i].name;
+
+      $("#marvelName").text(marvelName);
+      $("#marvelBtn").attr("name", marvelName);
   }) 
 
   //TRYING TO PULL FROM POKE API
@@ -53,6 +56,7 @@
       var pokeName = pokemon.charAt(0).toUpperCase() + pokeSlice;
 
       $("#pokeName").text(pokeName);
+      $("#pokeBtn").attr("name", pokeName);
   })
 // END API section
 
@@ -70,29 +74,37 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-var pokeChar = "";
+// var pokeChar = $("#pokeName").val().trim();
 var pokeClick = 0;
-var marvelChar = "";
+// var marvelChar = $("#marvelName").val().trim();
 var marvelClick = 0;
 
 //   Pokemon Vote
-$("#pokeBtn").on("click", function() {
+$(document).on("click", "#pokeBtn", function() {
   // event.preventDefault();
+  var pokeChar = $(this).attr("name");
+//   var marvelChar = $("#marvelBtn").attr("name");
+
+  console.log(pokeChar);
   pokeClick++;
   database.ref().push({
       pokeChar: pokeChar,
       pokeClick: pokeClick,
-      marvelChar: marvelChar,
+    //   marvelChar: marvelChar,
       marvelClick: marvelClick,
     });
 }); // pokeBtn end
 
 //   Marvel Vote
-$("#marvelBtn").on("click", function() {
+$(document).on("click", "#marvelBtn", function() {
   // event.preventDefault();
+//   var pokeChar = $("#pokeBtn").attr("name");
+  var marvelChar = $(this).attr("name");
+
+  console.log(marvelChar);
   marvelClick++;
   database.ref().push({
-      pokeChar: pokeChar,
+    //   pokeChar: pokeChar,
       pokeClick: pokeClick,
       marvelChar: marvelChar,
       marvelClick: marvelClick,
