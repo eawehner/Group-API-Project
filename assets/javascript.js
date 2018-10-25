@@ -28,6 +28,8 @@
 
       var marvelPic = response.data.results[i].thumbnail.path + "." + response.data.results[i].thumbnail.extension;
       $("#marvelImg").attr("src", marvelPic);
+
+      $("#marvelName").text(response.data.results[i].name);
   }) 
 
   //TRYING TO PULL FROM POKE API
@@ -43,6 +45,14 @@
       console.log(response);
 
       $("#pokeImg").attr("src", response.sprites.front_default);
+
+      var pokemon = response.name;
+
+      var pokeSlice = pokemon.slice(1);
+
+      var pokeName = pokemon.charAt(0).toUpperCase() + pokeSlice;
+
+      $("#pokeName").text(pokeName);
   })
 // END API section
 
