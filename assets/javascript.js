@@ -25,6 +25,9 @@
       console.log(queryURL);
 
       console.log(response.data.results[i]);
+
+      var marvelPic = response.data.results[i].thumbnail.path + "." + response.data.results[i].thumbnail.extension;
+      $("#marvelImg").attr("src", marvelPic);
   }) 
 
   //TRYING TO PULL FROM POKE API
@@ -38,6 +41,8 @@
   .then(function(response) {
       console.log(pokeURL);
       console.log(response);
+
+      $("#pokeImg").attr("src", response.sprites.front_default);
   })
 // END API section
 
