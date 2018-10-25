@@ -83,14 +83,14 @@ var marvelClick = 0;
 $(document).on("click", "#pokeBtn", function() {
   // event.preventDefault();
   var pokeChar = $(this).attr("name");
-//   var marvelChar = $("#marvelBtn").attr("name");
+  var marvelChar = marvelName;
 
   console.log(pokeChar);
   pokeClick++;
   database.ref().push({
       pokeChar: pokeChar,
       pokeClick: pokeClick,
-    //   marvelChar: marvelChar,
+      marvelChar: marvelChar,
       marvelClick: marvelClick,
     });
 }); // pokeBtn end
@@ -98,13 +98,13 @@ $(document).on("click", "#pokeBtn", function() {
 //   Marvel Vote
 $(document).on("click", "#marvelBtn", function() {
   // event.preventDefault();
-//   var pokeChar = $("#pokeBtn").attr("name");
+  var pokeChar = pokeName;
   var marvelChar = $(this).attr("name");
 
   console.log(marvelChar);
   marvelClick++;
   database.ref().push({
-    //   pokeChar: pokeChar,
+      pokeChar: pokeChar,
       pokeClick: pokeClick,
       marvelChar: marvelChar,
       marvelClick: marvelClick,
