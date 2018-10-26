@@ -22,9 +22,9 @@ function aMarvel() {
   .then(function(response) {
       var i = getRandomInt(1, 20);
 
-      console.log(queryURL);
+    //   console.log(queryURL);
 
-      console.log(response.data.results[i]);
+    //   console.log(response.data.results[i]);
 
       var marvelPic = response.data.results[i].thumbnail.path + "." + response.data.results[i].thumbnail.extension;
       $("#marvelImg").attr("src", marvelPic);
@@ -46,8 +46,8 @@ function aPoke() {
       method: "GET"
   })
   .then(function(response) {
-      console.log(pokeURL);
-      console.log(response);
+    //   console.log(pokeURL);
+    //   console.log(response);
 
       $("#pokeImg").attr("src", response.sprites.front_default);
 
@@ -77,22 +77,22 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 // var pokeChar = $("#pokeName").val().trim();
-var pokeClick = 0;
+var pokeClick = "";
 // var marvelChar = $("#marvelName").val().trim();
-var marvelClick = 0;
+var marvelClick = "";
 
 //   Pokemon Vote
 $(document).on("click", "#pokeBtn", function() {
   // event.preventDefault();
   var pokeChar = $(this).attr("name");
-//   var marvelChar = $("#marvelBtn").attr("name");
+  var marvelChar = $("#marvelBtn").attr("name");
 
-  console.log(pokeChar);
-  pokeClick++;
+  pokeClick = "Win";
+  marvelClick = "Loss";
   database.ref().push({
       pokeChar: pokeChar,
       pokeClick: pokeClick,
-    //   marvelChar: marvelChar,
+      marvelChar: marvelChar,
       marvelClick: marvelClick,
     });
     aPoke();
@@ -102,13 +102,13 @@ $(document).on("click", "#pokeBtn", function() {
 //   Marvel Vote
 $(document).on("click", "#marvelBtn", function() {
   // event.preventDefault();
-//   var pokeChar = $("#pokeBtn").attr("name");
+  var pokeChar = $("#pokeBtn").attr("name");
   var marvelChar = $(this).attr("name");
 
-  console.log(marvelChar);
-  marvelClick++;
+  marvelClick = "Win";
+  pokeClick = "Loss";
   database.ref().push({
-    //   pokeChar: pokeChar,
+      pokeChar: pokeChar,
       pokeClick: pokeClick,
       marvelChar: marvelChar,
       marvelClick: marvelClick,
