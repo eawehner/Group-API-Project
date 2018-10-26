@@ -89,6 +89,7 @@ $(document).on("click", "#pokeBtn", function() {
 
   pokeClick = "Win";
   marvelClick = "Loss";
+
   database.ref().push({
       pokeChar: pokeChar,
       pokeClick: pokeClick,
@@ -107,6 +108,7 @@ $(document).on("click", "#marvelBtn", function() {
 
   marvelClick = "Win";
   pokeClick = "Loss";
+
   database.ref().push({
       pokeChar: pokeChar,
       pokeClick: pokeClick,
