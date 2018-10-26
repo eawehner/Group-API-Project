@@ -6,7 +6,7 @@
 
   // var id = getRandomInt(1009150, 1011100);
   // /${id} in url
-
+function aMarvel() {
   var offset = getRandomInt(1, 1471);
 
   var public_api = "0fe98b910165d9ca2dc0abf1bc48fca1";
@@ -33,10 +33,12 @@
 
       $("#marvelName").text(marvelName);
       $("#marvelBtn").attr("name", marvelName);
-  }) 
+  })
+}; 
 
   //TRYING TO PULL FROM POKE API
 
+function aPoke() {
   var pokeURL = 'https://pokeapi.co/api/v2/pokemon-form/' + Math.floor(Math.random() * Math.floor(807));
 
   $.ajax ({
@@ -59,7 +61,7 @@
       $("#pokeBtn").attr("name", pokeName);
   })
 // END API section
-
+};
 
 // Stella's Firebase
 var config = {
@@ -93,6 +95,8 @@ $(document).on("click", "#pokeBtn", function() {
     //   marvelChar: marvelChar,
       marvelClick: marvelClick,
     });
+    aPoke();
+    aMarvel();
 }); // pokeBtn end
 
 //   Marvel Vote
@@ -109,30 +113,18 @@ $(document).on("click", "#marvelBtn", function() {
       marvelChar: marvelChar,
       marvelClick: marvelClick,
     });
+    aPoke();
+    aMarvel();
 }); // marvelBtn end
 
-// Reference from Stella's HW for pulling images from AJAX for the GUI
-// .then(function(response) {
-  // storing the data from the AJAX request in the results variable
-  //var results = response.data;
-  //console.log(response);
-  // Looping through each result item
-  //for (var i = 0; i < results.length; i++) {
-    //var gifDiv = $("<div>");
-    // Creating a paragraph tag with the result item's rating
-    //var p = $("<p>").text("Rating: " + results[i].rating.toUpperCase());
-    //var t = $("<p>").text("Title: " + results[i].title.toUpperCase());
-    // Creating and storing an image tag
-    //var topicGif = $("<img>");
-    // Setting the src attribute of the image to a property pulled off the result item
-    //topicGif.attr("src", results[i].images.fixed_height_still.url);
-    //topicGif.attr("data-still",results[i].images.fixed_height_still.url); // still image
-    //topicGif.attr("data-animate",results[i].images.fixed_height.url); // animated image
-    //topicGif.attr("data-state", "still");   
-    // Appending the paragraph and image tag to the gifDiv
-    //gifDiv.append(topicGif);
-    //gifDiv.append(p, t);
-    // Prependng the gifDiv to the HTML page in the "#gifs-appear-here" div
-    //$("#gifDisplay").prepend(gifDiv);
-  //}
-//});
+aPoke();
+aMarvel();
+
+database.ref().on("child_added", function(childSnapshot) {
+    var snap = childSnapshot.val();
+    var pName = snap.pokeChar;
+    var pResult = snap.pokeClick;
+    var mName = snap.marvelChar;
+    var mResult = snap.marvelClick;
+    $("#rankingTable").append("<tr><td>" + pName + "</td><td>" + pResult + "</td><td>" + "VS" + "</td><td>" + mName + "</td><td>" + mResult + "</td></tr>");
+});
